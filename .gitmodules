@@ -1,0 +1,4 @@
+[submodule "l4casadi"]
+	path = l4casadi
+	url = git@github.com:trouverun/l4casadi.git
+	branch = noconstant
