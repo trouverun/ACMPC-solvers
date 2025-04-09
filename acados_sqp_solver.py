@@ -10,8 +10,8 @@ from typing import List
 @dataclass
 class AcadosSolverConfig:
     qp_solver_iter_max: int = 200
-    nlp_solver_iter_max: int = 25
-    nlp_step_length: float = 0.45
+    nlp_solver_iter_max: int = 10
+    nlp_step_length: float = 0.75
     levenberg_marquardt: float = 1e-4
 
 class AcadosSQPSolver(SymbolicMPCSolver):

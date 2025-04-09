@@ -5,8 +5,7 @@ The "standard" MPC problem is first formulated by instantiating the [SymbolicMPC
 ```python
 import casadi as cs
 import numpy as np
-from mpc_solvers.mpc_problem import SymbolicMPCProblem
-from mpc_solvers.acados_sqp_solver import AcadosSQPSolver
+from acmpc_solvers import SymbolicMPCProblem, AcadosSQPSolver
 
 fake_inf = 1e7
 
