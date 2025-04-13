@@ -3,7 +3,7 @@ import numpy as np
 import casadi as cs
 import scipy
 from acados_template import AcadosOcp, AcadosOcpSolver
-from mpc_solvers.mpc_problem import SymbolicMPCProblem, SymbolicMPCSolver
+from acmpc_solvers.mpc_problem import SymbolicMPCProblem, SymbolicMPCSolver
 from typing import List
 
 

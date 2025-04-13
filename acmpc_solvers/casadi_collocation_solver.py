@@ -2,7 +2,7 @@ import subprocess
 from typing import List
 import numpy as np
 from casadi import *
-from mpc_solvers.mpc_problem import SymbolicMPCProblem, SymbolicMPCSolver
+from acmpc_solvers.mpc_problem import SymbolicMPCProblem, SymbolicMPCSolver
 
 
 class CasadiCollocationSolver(SymbolicMPCSolver):

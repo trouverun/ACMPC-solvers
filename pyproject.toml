@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+    "setuptools>=42"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acmpc_solvers"
+version = "0.1.0"
+description = "Solves actor-critic MPC problems"
+readme = "README.md"
+authors = [
+    { name = "Aleksi Mäki-Penttilä", email = "aleksi.maki-penttila@tuni.fi" }
+]
+dependencies = [
+    "torch",
+    "casadi>=3.6",
+    "acados_template",
+    "l4casadi"
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/trouverun/acmpc_solvers"
+
+[tool.setuptools]
+packages = ["acmpc_solvers"]
