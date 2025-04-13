@@ -3,7 +3,3 @@
 	url = git@github.com:trouverun/l4casadi.git
 	branch = noconstant
 	
-[submodule "acados"]
-	path = external/acados
-	url = git@github.com:acados/acados.git
-	branch = v0.4.5
