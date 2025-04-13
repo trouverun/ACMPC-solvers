@@ -2,14 +2,16 @@
 This repository provides a flexible interface which can be used to formulate [Actor-Critic MPC](https://arxiv.org/abs/2409.15717) problems using both [CasADi](https://web.casadi.org/) and [Acados](https://docs.acados.org/).
 
 ## Installation
-First:
+First, follow Acados [build instructions](https://docs.acados.org/installation/index.html) and [install the Python package](https://docs.acados.org/python_interface/index.html)
+
+Then:
 ```bash
 git clone git@github.com:trouverun/acmpc_solvers.git
 cd acmpc_solvers
 git submodule update --recursive --init 
 pip install -e external/l4casadi
+pip install -e .
 ```
-Then follow Acados [build instructions](https://docs.acados.org/installation/index.html) and [install the Python package](https://docs.acados.org/python_interface/index.html)
 
 ## Usage
 The "standard" MPC problem is first formulated by instantiating the [SymbolicMPCProblem](./mpc_problem.py) class, as shown here for a unicycle robot:
