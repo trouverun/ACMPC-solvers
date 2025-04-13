@@ -8,8 +8,10 @@ Then:
 ```bash
 git clone git@github.com:trouverun/acmpc_solvers.git
 cd acmpc_solvers
-git submodule update --recursive --init 
-pip install -e external/l4casadi
+pip install -r requirements.txt
+git submodule update --recursive --init
+pip install -r external/l4casadi/requirements.txt
+pip install -e external/l4casadi --no-build-isolation
 pip install -e .
 ```
 
