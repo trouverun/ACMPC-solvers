@@ -1,6 +1,17 @@
 # ACMPC-solvers
-This repository provides a flexible interface which can be used to formulate [Actor-Critic MPC](https://arxiv.org/abs/2409.15717) problems using both [CasADi](https://web.casadi.org/) and [Acados](https://docs.acados.org/). 
+This repository provides a flexible interface which can be used to formulate [Actor-Critic MPC](https://arxiv.org/abs/2409.15717) problems using both [CasADi](https://web.casadi.org/) and [Acados](https://docs.acados.org/).
 
+## Installation
+First:
+```bash
+git clone git@github.com:trouverun/acmpc_solvers.git
+cd acmpc_solvers
+git submodule update --recursive --init 
+pip install -e external/l4casadi
+```
+Then follow Acados [build instructions](https://docs.acados.org/installation/index.html) and [install the Python package](https://docs.acados.org/python_interface/index.html)
+
+## Usage
 The "standard" MPC problem is first formulated by instantiating the [SymbolicMPCProblem](./mpc_problem.py) class, as shown here for a unicycle robot:
 ```python
 import casadi as cs
@@ -73,8 +84,8 @@ problem.add_terminal_neural_cost(model=critic_terminal_model, model_state=critic
 which uses [L4CasADi](https://github.com/Tim-Salzmann/l4casadi) to embed an arbitrary torch nn.Module to the symbolic computation graph. The stage cost is added as a second-order Taylor expansion (without the constant term), while the terminal cost is added "as is".
 
 For solving the resulting problem, there are currently two options: 
-1. [CasadiCollocationSolver](./casadi_collocation_solver.py) (slow, non-realtime, but more robust)
-2. [AcadosSQPSolver](./acados_sqp_solver.py) (fast, real-time, but less robust)
+1. [CasadiCollocationSolver](./acmpc_solvers/casadi_collocation_solver.py) (slow, non-realtime, but more robust)
+2. [AcadosSQPSolver](./acmpc_solvers/acados_sqp_solver.py) (fast, real-time, but less robust)
    
 Both solvers generate C code from the python problem description, and therefore bypass the slow CasADi VM execution model.
 
